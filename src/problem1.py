@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Yicheng Yang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -38,7 +38,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -46,7 +46,7 @@ def main():
 # You should  ** CALL **  those functions as needed in implementing the
 # other functions.  After you have READ this, change its _TODO_ to DONE.
 ###############################################################################
-
+import math
 def is_prime(n):
     """
     What comes in:  An integer n >= 2.
@@ -151,6 +151,10 @@ def run_test_problem1a():
 
 
 def problem1a(m, n):
+    number = 0
+    for k in range(n**2-m**2+1):
+        number = number + math.sin(m**2+k)
+    return number
     """
     What comes in:  Integers m and n with abs(m) <= abs(n).
     What goes out:
@@ -168,7 +172,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -199,8 +203,29 @@ def run_test_problem1b():
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
 
+    expected = 6
+
+    actual = problem1b(4, 5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+    expected = 9
+    actual = problem1b(5, 7)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+    expected = 6
+    actual = problem1b(2, 8)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+
+
+
 
 def problem1b(m, f):
+    number = 0
+    for k in range(f*m-m+1):
+        if is_prime(m+k):
+            number = number + 1
+    return number
     """
     What comes in:  Positive integers m and f such that m >= 2.
     What goes out:
