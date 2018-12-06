@@ -315,6 +315,14 @@ def run_test_problem1c():
 
 
 def problem1c(n):
+    number = 1
+    for k in range(n-1):
+        if is_prime(2+k):
+            number = number * (2+k)
+    number = sum_of_digits(number)
+    # problem
+    return number
+
     """
     What comes in:  An integer n >= 2.
     What goes out:
